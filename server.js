@@ -17,8 +17,8 @@ async function main() {
         console.log(`Server started.... Listening to port ${port}....`);
     });
     // await dataScraper.UpdateApplist();
-    await dataScraper.UpdateAppDetails();
-    // await dataScraper.UpdateAppReviews(42040);
+    // await dataScraper.UpdateAppDetails();
+    // await dataScraper.UpdateAppReviews(42127);
     // await dataScraper.UpdateAppMetrics();
 }
 main();
