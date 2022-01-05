@@ -8,7 +8,7 @@ module.exports = {
         try {
             const results = await axios.get('https://api.steampowered.com/ISteamApps/GetAppList/v2/');
             for (let game of results.data.applist.apps) {
-                const query = `INSERT INTO games(appid, name) VALUES($1, $2)`;
+                const query = `INSERT INTO games(appid, name) VALUES($1, $2) ON CONFLICT DO NOTHING`;
                 const values = [game.appid, game.name];
                 await pool.query(query, values);
                 console.log(`Inserted appid (${game.appid}) => ${game.name} into the DB.`);
